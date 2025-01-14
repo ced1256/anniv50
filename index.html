@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Peringatan Pernikahan ke-60</title>
+    <!-- Fonts (Google Fonts contoh) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Contoh penggunaan font bergaya tulisan tangan untuk heading 
+         dan sans-serif untuk isi -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Gaya Umum */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", sans-serif;
+        background-color: #faf7f2;
+        color: #444;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Great Vibes", cursive;
+        color: #555;
+        margin: 0;
+      }
+
+      /* Animasi Fade-in */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1s ease;
+      }
+      .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Bagian Hero */
+      .hero {
+        position: relative;
+        background: url("gypsophila-gray-background-with-copy-space-center.jpg")
+          no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 1rem;
+      }
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.6);
+        z-index: 0;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      .hero-content h1 {
+        font-size: 3rem;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+      .hero-content .subtitle {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+      }
+      .hero-content .btn {
+        background-color: #ccc;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+      }
+      .hero-content .btn:hover {
+        background-color: #bbb;
+      }
+
+      /* Bagian Detail Acara */
+      .event-details {
+        max-width: 800px;
+        margin: 4rem auto;
+        padding: 0 1.5rem;
+        text-align: center;
+      }
+      .event-details h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .event-details p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+      .divider {
+        width: 60px;
+        height: 2px;
+        background-color: #555;
+        margin: 1rem auto;
+      }
+
+      /* Bagian Lokasi (Peta Interaktif) */
+      .location {
+        max-width: 800px;
+        margin: 4rem auto;
+        padding: 0 1.5rem;
+        text-align: center;
+      }
+      .location .map-embed {
+        width: 100%;
+        height: 400px;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Bagian Kisah Kami */
+      .our-story {
+        background-color: #fff;
+        max-width: 1000px;
+        margin: 4rem auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      .story-image {
+        flex: 1 1 300px;
+        padding: 1rem;
+      }
+      .story-image img {
+        max-width: 100%;
+        border-radius: 8px;
+      }
+      .story-text {
+        flex: 2 1 400px;
+        padding: 1rem;
+      }
+      .story-text h3 {
+        margin-bottom: 1rem;
+      }
+      .story-text p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+
+      /* Bagian RSVP */
+      .rsvp-section {
+        text-align: center;
+        margin: 4rem 0;
+      }
+      .rsvp-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .rsvp-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .rsvp-form div {
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+      .rsvp-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      .rsvp-form input[type="text"],
+      .rsvp-form textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .rsvp-form button {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        background-color: #333;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      .rsvp-form button:hover {
+        background-color: #555;
+      }
+      .rsvp-response {
+        margin-top: 1rem;
+        text-align: center;
+        font-style: italic;
+        display: none;
+      }
+
+      /* Bagian Footer */
+      .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+      }
+      .footer p {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      /* Responsif */
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+        .hero-content .subtitle {
+          font-size: 1.2rem;
+        }
+        .our-story {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Audio Background (Autoplay, but MUTED) -->
+    <audio id="bg-music" autoplay loop muted>
+      <!-- Rename your file to something simpler if possible -->
+      <source src="Liebestraume.mp3" type="audio/mp3" />
+      <!-- Tambahkan format lain jika diperlukan, misalnya .ogg -->
+      Browser Anda tidak mendukung pemutar audio.
+    </audio>
+
+    <!-- Bagian Hero -->
+    <section class="hero fade-in">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Peringatan Pernikahan ke-60</h1>
+        <div class="subtitle">Sebuah Perayaan Cinta Berlian</div>
+        <button
+          class="btn"
+          onclick="document.querySelector('.event-details').scrollIntoView({ behavior: 'smooth' });"
+        >
+          Bergabung dalam Perayaan
+        </button>
+      </div>
+    </section>
+
+    <!-- Bagian Detail Acara -->
+    <section class="event-details fade-in">
+      <h2>Welly &amp; Rietje</h2>
+      <div class="divider"></div>
+      <p>
+        Bersama keluarga mereka, <br />
+        Welly &amp; Rietje dengan hormat mengundang Anda <br />
+        untuk bergabung merayakan enam dekade pernikahan mereka.
+      </p>
+      <p>
+        <strong>Tanggal:</strong> 15 November 2025 <br />
+        <strong>Pukul:</strong> 16.00 – 20.00 WIB <br />
+        <strong>Lokasi:</strong>
+        <a
+          href="https://www.google.com/maps/place/Luwansa+Hotel+%26+Convention+Center+Manado"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Luwansa Hotel &amp; Convention Center Manado
+        </a>
+      </p>
+      <p>Resepsi akan dilaksanakan segera setelah upacara pembaruan janji.</p>
+    </section>
+
+    <!-- Bagian Lokasi (Embed Google Maps) -->
+    <section class="location fade-in">
+      <h2>Lokasi</h2>
+      <p>
+        Berikut adalah
+        <strong>Luwansa Hotel &amp; Convention Center Manado</strong>
+      </p>
+      <!-- Iframe Google Maps -->
+      <iframe
+        class="map-embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.510032447065!2d124.85312407477777!3d1.4673191985188916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3287757d2418af5f%3A0xf64a2f45bf59fa9d!2sLuwansa%20Hotel%20%26%20Convention%20Center%20Manado!5e0!3m2!1sen!2sus!4v1736834147217!5m2!1sen!2sus"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+
+    <!-- Bagian Kisah Kami -->
+    <section class="our-story fade-in">
+      <div class="story-image">
+        <!-- Ganti dengan gambar pasangan -->
+        <img
+          src="Screenshot 2025-01-14 at 12.50.44.png"
+          alt="Foto Kisah Pasangan"
+        />
+      </div>
+      <div class="story-text">
+        <h3>Kisah Kami</h3>
+        <p>
+          Semuanya dimulai 60 tahun yang lalu, pada suatu sore musim gugur yang
+          cerah... Sejak saat itu, kami telah berbagi banyak kenangan, tawa, dan
+          petualangan.
+        </p>
+        <p>
+          Kami ingin merayakan tonggak istimewa ini bersama orang-orang yang
+          telah menjadi bagian penting dalam perjalanan kami—keluarga dan
+          sahabat tercinta.
+        </p>
+      </div>
+    </section>
+
+    <!-- Bagian RSVP (Form) -->
+    <section class="rsvp-section fade-in" id="rsvp-link">
+      <h2>Konfirmasi Kehadiran (RSVP)</h2>
+      <p>Mohon konfirmasi kehadiran Anda sebelum 15 Oktober 2025</p>
+
+      <!-- Form RSVP (Menggunakan Formspree) -->
+      <form
+        class="rsvp-form"
+        method="POST"
+        action="https://formspree.io/f/mnnnwklp"
+      >
+        <div>
+          <label for="name">Nama:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div>
+          <label for="message">Pesan / Doa:</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <button type="submit">Kirim RSVP</button>
+      </form>
+
+      <!-- Pesan Balasan (opsional, 
+           Formspree biasanya redirect atau 
+           menampilkan pesan otomatis) -->
+      <div class="rsvp-response" style="display: none"></div>
+    </section>
+
+    <!-- Bagian Footer -->
+
+    <!-- Script JavaScript Intersection Observer -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Fade-in observer
+        const fadeEls = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        fadeEls.forEach((el) => observer.observe(el));
+
+        // The audio element is muted by default:
+        const bgMusic = document.getElementById("bg-music");
+
+        // We'll unmute on the first user interaction:
+        function unmuteMusicOnce() {
+          bgMusic.muted = false; // unmute
+          bgMusic.volume = 1; // set desired volume
+          // Remove listeners so it doesn't re-fire
+          document.removeEventListener("click", unmuteMusicOnce);
+          document.removeEventListener("mousemove", unmuteMusicOnce);
+          document.removeEventListener("touchstart", unmuteMusicOnce);
+        }
+
+        // Add event listeners for the very first interaction:
+        document.addEventListener("click", unmuteMusicOnce);
+        document.addEventListener("mousemove", unmuteMusicOnce);
+        document.addEventListener("touchstart", unmuteMusicOnce);
+      });
+    </script>
+  </body>
+</html>
