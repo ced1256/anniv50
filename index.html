@@ -12,20 +12,29 @@
     />
 
     <style>
+      /* 
+        -- GOLD THEMED PALETTE EXAMPLES --
+        Gold tones used here: 
+        #F5EFE1 (light background),
+        #8B6C42 (dark gold/brown for text),
+        #B08D57 (mid gold accent),
+        #C2A46B (brighter gold for highlights)
+      */
+
       /* Gaya Umum */
       body {
         margin: 0;
         padding: 0;
         font-family: "Open Sans", sans-serif;
-        background-color: #faf7f2;
-        color: #444;
+        background-color: #f5efe1; /* Light 'champagne' background */
+        color: #8b6c42; /* Dark gold/brown text */
       }
 
       h1,
       h2,
       h3 {
         font-family: "Great Vibes", cursive;
-        color: #555;
+        color: #b08d57; /* Medium gold accent for headings */
         margin: 0;
       }
 
@@ -58,7 +67,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(255, 255, 255, 0.6);
+        /* Make the overlay slightly golden */
+        background: rgba(255, 223, 158, 0.5);
         z-index: 0;
       }
       .hero-content {
@@ -67,12 +77,11 @@
       }
       .hero-content h1 {
         font-size: 3rem;
-        color: #333;
         margin-bottom: 0.5rem;
       }
       .hero-content .date-range {
         font-size: 1.5rem;
-        color: #666;
+        color: #8b6c42;
         margin: 0.5rem 0 1.5rem;
         font-weight: 400;
       }
@@ -81,27 +90,28 @@
         font-weight: 300;
         font-family: "Great Vibes", cursive;
         margin-bottom: 2rem;
-        letter-spacing: 0.05em; /* Adds space between letters */
-        /* line-height: 1.4; Adjusts vertical spacing for better readability */
+        letter-spacing: 0.05em;
       }
 
       .hero-content .btn {
-        background-color: #ccc;
+        background-color: #c2a46b; /* A brighter gold */
         border: none;
         padding: 0.75rem 1.5rem;
         cursor: pointer;
         font-size: 1rem;
         transition: background-color 0.3s;
+        color: #fff; /* Contrasting text color for the button */
+        border-radius: 4px;
       }
       .hero-content .btn:hover {
-        background-color: #bbb;
+        background-color: #b08d57; /* Darken on hover */
       }
 
       /* Bagian Detail Acara */
       .event-details {
         max-width: 800px;
         margin: 4rem auto;
-        padding: 0.5 1.5rem;
+        padding: 0.5rem 1.5rem;
         text-align: center;
       }
       .event-details h2 {
@@ -117,7 +127,7 @@
       .divider {
         width: 60px;
         height: 2px;
-        background-color: #555;
+        background-color: #b08d57;
         margin: 1rem auto;
       }
 
@@ -133,12 +143,13 @@
         height: 400px;
         border: 0;
         border-radius: 8px;
+        /* Subtle shadow for the map frame */
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       }
 
       /* Bagian Kisah Kami */
       .our-story {
-        background-color: #fff;
+        background-color: #fffaf0; /* Slightly lighter background */
         max-width: 1000px;
         margin: 4rem auto;
         display: flex;
@@ -167,6 +178,45 @@
         font-size: 1rem;
         margin-bottom: 1rem;
         line-height: 1.6;
+      }
+
+      /* Photo Gallery */
+      .photo-gallery {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        background-color: #fdfaf3;
+        border-radius: 8px;
+        max-width: 1000px;
+        margin: 4rem auto;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      .photo-gallery h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .photo-gallery p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+      }
+      .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .gallery-item {
+        flex: 1 1 calc(25% - 1rem);
+        max-width: calc(25% - 1rem);
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
       }
 
       /* Bagian RSVP */
@@ -204,14 +254,14 @@
       .rsvp-form button {
         padding: 0.75rem 1.5rem;
         border: none;
-        background-color: #333;
+        background-color: #8b6c42; /* Darker gold for button */
         color: #fff;
         font-size: 1rem;
         cursor: pointer;
         border-radius: 4px;
       }
       .rsvp-form button:hover {
-        background-color: #555;
+        background-color: #b08d57;
       }
       .rsvp-response {
         margin-top: 1rem;
@@ -222,7 +272,7 @@
 
       /* Footer */
       .footer {
-        background-color: #333;
+        background-color: #8b6c42;
         color: #fff;
         padding: 1rem;
         text-align: center;
@@ -248,9 +298,9 @@
 
       .diagonal {
         font-size: 2rem;
-        color: #666;
         position: relative;
-        left: -50px; /* Moves the text to the left */
+        left: -50px;
+        color: #c2a46b; /* Brighter gold accent */
       }
     </style>
   </head>
@@ -269,12 +319,12 @@
         <h1>Ibadah Syukur Anniversary ke-50</h1>
         <p class="date-range">14 Januari 1975 - 14 Januari 2025</p>
         <div class="subtitle">Sebuah Perayaan Cinta Emas</div>
-        <button
+        <!-- <button
           class="btn"
           onclick="document.querySelector('.event-details').scrollIntoView({ behavior: 'smooth' });"
         >
           Bergabung dalam Perayaan
-        </button>
+        </button> -->
       </div>
     </section>
 
@@ -283,9 +333,9 @@
       <h2>Welly Kalalo &amp; Rietje Rindorindo</h2>
       <div class="divider"></div>
       <p>
-        Bersama keluarga mereka, <br />
+        Bersama keluarga kami, <br />
         dengan hormat mengundang Bapak/Ibu/Sdra/i <br />
-        turut merayakan lima dekade pernikahan mereka. <br />
+        turut merayakan lima dekade pernikahan kami. <br />
         Yang akan diadakan pada:
       </p>
       <p>
@@ -300,16 +350,10 @@
           Luwansa Hotel &amp; Convention Center Manado
         </a>
       </p>
-      <!-- <p>Resepsi akan dilaksanakan segera setelah upacara pembaruan janji.</p> -->
     </section>
 
     <section class="location fade-in">
       <h2>Lokasi</h2>
-      <p>
-        <!-- Berikut adalah -->
-        <!-- <strong>Luwansa Hotel &amp; Convention Center Manado</strong> -->
-      </p>
-      <!-- Iframe Google Maps -->
       <iframe
         class="map-embed"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.510032447065!2d124.85312407477777!3d1.4673191985188916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3287757d2418af5f%3A0xf64a2f45bf59fa9d!2sLuwansa%20Hotel%20%26%20Convention%20Center%20Manado!5e0!3m2!1sen!2sus!4v1736834147217!5m2!1sen!2sus"
@@ -329,18 +373,41 @@
         />
       </div>
       <div class="story-text">
-        <h3>Kisah Kami</h3>
+        <h3>Sekilas Kisah Kami</h3>
         <p>
-          Semuanya dimulai 50 tahun yang lalu, pada suatu sore musim gugur yang
-          cerah... Sejak saat itu, kami telah berbagi banyak kenangan, tawa, dan
-          petualangan.
+          Semuanya dimulai 54 tahun yang lalu dikala kami pertama kali bertemu.
+          Sejak saat itu, kami telah berbagi banyak kenangan, suka terlebih
+          duka. Namun dengan bergulir-nya waktu, kami boleh melawati semua
+          rintangan. Dan semua itu kami yakini karena perkenanan TUHAN maka kami
+          dapat melewati semuanya.
         </p>
         <p>
-          Kami ingin merayakan tonggak istimewa ini bersama orang-orang yang
-          telah menjadi bagian penting dalam perjalanan kami—keluarga dan
-          sahabat tercinta.
+          Dan oleh perkenanan-Nya pula; setelah 4 tahun kemudian, kami disatukan
+          dalam pernikahan Kudus pada tanggal 14 Januari 1975 di GMIM Sentrum
+          Manado. Maka dengan itu, kami ingin merayakan tonggak istimewa ini
+          bersama orang-orang yang telah menjadi bagian penting dalam perjalanan
+          kami &amp; keluarga dan sahabat tercinta di malam yang berbahagia ini.
+        </p>
+        <p>
+          Kami yang Berbahagia,<br />
+          Welly &amp; Rietje,<br />
+          Anak-anak dan Cucu-cucu,<br />
+          Dr. Lina.L Kalalo, Sp.A &amp; Eric Kuswanto, SE<br />
+          - Cedric <br />
+          - Kayleen <br />
+          - Bianca <br />
+          - Svetlana <br />
+          Dr. Peter.A.I Kalalo &amp; Dr. Felicia Mogi<br />
+          - Julliyard <br />
+          - Joanelle <br />
         </p>
       </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="photo-gallery fade-in">
+      <h2>Tuhan adalah gembalaku, takkan kekurangan aku.</h2>
+      <h2>Mazmur 23:1</h2>
     </section>
 
     <!-- RSVP -->
@@ -364,6 +431,14 @@
       </form>
     </section>
 
+    <section class="event-details fade-in">
+      <h2>Terima Kasih atas Kehadiran Bapak/Ibu/Sdra/i</h2>
+      <h2>Tuhan Memberkati Kita Sekalian</h2>
+
+      <div class="divider"></div>
+      <p></p>
+    </section>
+
     <!-- Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -380,6 +455,8 @@
           { threshold: 0.1 }
         );
         fadeEls.forEach((el) => observer.observe(el));
+
+        // Handle BG music on first interaction
         const bgMusic = document.getElementById("bg-music");
         function unmuteMusicOnce() {
           bgMusic.muted = false;
