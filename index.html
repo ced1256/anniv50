@@ -3,12 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Undangan Peringatan Pernikahan ke-60</title>
-    <!-- Fonts (Google Fonts contoh) -->
+    <title>Undangan Perayaan Pernikahan ke-50</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Contoh penggunaan font bergaya tulisan tangan untuk heading 
-         dan sans-serif untuk isi -->
     <link
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -71,13 +68,23 @@
       .hero-content h1 {
         font-size: 3rem;
         color: #333;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .hero-content .date-range {
+        font-size: 1.5rem;
+        color: #666;
+        margin: 0.5rem 0 1.5rem;
+        font-weight: 400;
       }
       .hero-content .subtitle {
-        font-size: 1.5rem;
+        font-size: 2.3rem;
         font-weight: 300;
+        font-family: "Great Vibes", cursive;
         margin-bottom: 2rem;
+        letter-spacing: 0.05em; /* Adds space between letters */
+        /* line-height: 1.4; Adjusts vertical spacing for better readability */
       }
+
       .hero-content .btn {
         background-color: #ccc;
         border: none;
@@ -94,12 +101,13 @@
       .event-details {
         max-width: 800px;
         margin: 4rem auto;
-        padding: 0 1.5rem;
+        padding: 0.5 1.5rem;
         text-align: center;
       }
       .event-details h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
+        letter-spacing: 0.05em;
       }
       .event-details p {
         font-size: 1rem;
@@ -113,7 +121,7 @@
         margin: 1rem auto;
       }
 
-      /* Bagian Lokasi (Peta Interaktif) */
+      /* Bagian Lokasi */
       .location {
         max-width: 800px;
         margin: 4rem auto;
@@ -212,7 +220,7 @@
         display: none;
       }
 
-      /* Bagian Footer */
+      /* Footer */
       .footer {
         background-color: #333;
         color: #fff;
@@ -237,15 +245,19 @@
           text-align: center;
         }
       }
+
+      .diagonal {
+        font-size: 2rem;
+        color: #666;
+        position: relative;
+        left: -50px; /* Moves the text to the left */
+      }
     </style>
   </head>
 
   <body>
-    <!-- Audio Background (Autoplay, but MUTED) -->
     <audio id="bg-music" autoplay loop muted>
-      <!-- Rename your file to something simpler if possible -->
       <source src="Liebestraume.mp3" type="audio/mp3" />
-      <!-- Tambahkan format lain jika diperlukan, misalnya .ogg -->
       Browser Anda tidak mendukung pemutar audio.
     </audio>
 
@@ -253,8 +265,10 @@
     <section class="hero fade-in">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1>Peringatan Pernikahan ke-60</h1>
-        <div class="subtitle">Sebuah Perayaan Cinta Berlian</div>
+        <h1 class="diagonal">Undangan</h1>
+        <h1>Ibadah Syukur Anniversary ke-50</h1>
+        <p class="date-range">14 Januari 1975 - 14 Januari 2025</p>
+        <div class="subtitle">Sebuah Perayaan Cinta Emas</div>
         <button
           class="btn"
           onclick="document.querySelector('.event-details').scrollIntoView({ behavior: 'smooth' });"
@@ -266,17 +280,18 @@
 
     <!-- Bagian Detail Acara -->
     <section class="event-details fade-in">
-      <h2>Welly &amp; Rietje</h2>
+      <h2>Welly Kalalo &amp; Rietje Rindorindo</h2>
       <div class="divider"></div>
       <p>
         Bersama keluarga mereka, <br />
-        Welly &amp; Rietje dengan hormat mengundang Anda <br />
-        untuk bergabung merayakan enam dekade pernikahan mereka.
+        dengan hormat mengundang Bapak/Ibu/Sdra/i <br />
+        turut merayakan lima dekade pernikahan mereka. <br />
+        Yang akan diadakan pada:
       </p>
       <p>
-        <strong>Tanggal:</strong> 15 November 2025 <br />
-        <strong>Pukul:</strong> 16.00 – 20.00 WIB <br />
-        <strong>Lokasi:</strong>
+        <strong>Tanggal:</strong> 19 Januari 2025 <br />
+        <strong>Pukul:</strong> 18:30 WITA <br />
+        <strong>Tempat:</strong>
         <a
           href="https://www.google.com/maps/place/Luwansa+Hotel+%26+Convention+Center+Manado"
           target="_blank"
@@ -285,15 +300,14 @@
           Luwansa Hotel &amp; Convention Center Manado
         </a>
       </p>
-      <p>Resepsi akan dilaksanakan segera setelah upacara pembaruan janji.</p>
+      <!-- <p>Resepsi akan dilaksanakan segera setelah upacara pembaruan janji.</p> -->
     </section>
 
-    <!-- Bagian Lokasi (Embed Google Maps) -->
     <section class="location fade-in">
       <h2>Lokasi</h2>
       <p>
-        Berikut adalah
-        <strong>Luwansa Hotel &amp; Convention Center Manado</strong>
+        <!-- Berikut adalah -->
+        <!-- <strong>Luwansa Hotel &amp; Convention Center Manado</strong> -->
       </p>
       <!-- Iframe Google Maps -->
       <iframe
@@ -306,10 +320,9 @@
       ></iframe>
     </section>
 
-    <!-- Bagian Kisah Kami -->
+    <!-- Kisah Kami -->
     <section class="our-story fade-in">
       <div class="story-image">
-        <!-- Ganti dengan gambar pasangan -->
         <img
           src="Screenshot 2025-01-14 at 12.50.44.png"
           alt="Foto Kisah Pasangan"
@@ -318,7 +331,7 @@
       <div class="story-text">
         <h3>Kisah Kami</h3>
         <p>
-          Semuanya dimulai 60 tahun yang lalu, pada suatu sore musim gugur yang
+          Semuanya dimulai 50 tahun yang lalu, pada suatu sore musim gugur yang
           cerah... Sejak saat itu, kami telah berbagi banyak kenangan, tawa, dan
           petualangan.
         </p>
@@ -330,12 +343,10 @@
       </div>
     </section>
 
-    <!-- Bagian RSVP (Form) -->
+    <!-- RSVP -->
     <section class="rsvp-section fade-in" id="rsvp-link">
       <h2>Konfirmasi Kehadiran (RSVP)</h2>
-      <p>Mohon konfirmasi kehadiran Anda sebelum 15 Oktober 2025</p>
-
-      <!-- Form RSVP (Menggunakan Formspree) -->
+      <p>Mohon konfirmasi kehadiran Anda sebelum 19 Januari 2025</p>
       <form
         class="rsvp-form"
         method="POST"
@@ -351,19 +362,11 @@
         </div>
         <button type="submit">Kirim RSVP</button>
       </form>
-
-      <!-- Pesan Balasan (opsional, 
-           Formspree biasanya redirect atau 
-           menampilkan pesan otomatis) -->
-      <div class="rsvp-response" style="display: none"></div>
     </section>
 
-    <!-- Bagian Footer -->
-
-    <!-- Script JavaScript Intersection Observer -->
+    <!-- Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Fade-in observer
         const fadeEls = document.querySelectorAll(".fade-in");
         const observer = new IntersectionObserver(
           (entries, obs) => {
@@ -377,21 +380,14 @@
           { threshold: 0.1 }
         );
         fadeEls.forEach((el) => observer.observe(el));
-
-        // The audio element is muted by default:
         const bgMusic = document.getElementById("bg-music");
-
-        // We'll unmute on the first user interaction:
         function unmuteMusicOnce() {
-          bgMusic.muted = false; // unmute
-          bgMusic.volume = 1; // set desired volume
-          // Remove listeners so it doesn't re-fire
+          bgMusic.muted = false;
+          bgMusic.volume = 1;
           document.removeEventListener("click", unmuteMusicOnce);
           document.removeEventListener("mousemove", unmuteMusicOnce);
           document.removeEventListener("touchstart", unmuteMusicOnce);
         }
-
-        // Add event listeners for the very first interaction:
         document.addEventListener("click", unmuteMusicOnce);
         document.addEventListener("mousemove", unmuteMusicOnce);
         document.addEventListener("touchstart", unmuteMusicOnce);
